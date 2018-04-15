@@ -2,14 +2,46 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Home</title>
+	<title>{{titlemain}}</title>
+	<link rel="stylesheet" href="./stylesheets/home.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
-	<h1>Las Vegas</h1>
-	<ul>
-		{{#catagories}}
-		<li>{{title}}</li>
-		{{/catagories}}
-	</ul>
+	<div class="container">
+		<div class="header"><h1>Las Vegas</h1></div>
+		<div class="postlink"><a href="/post"><img src="/images/add.svg" alt="post link"></a></div>
+		<div class="leftbar">
+			<h1>Ryanslist</h1>
+			<ul>
+				<li><a href="/">help,faq,abuse,legal</a></li>
+				<li><a href="/">avoid scams & fraud</a></li>
+				<li><a href="/">personal safety tips</a></li>
+				<li><a href="/">terms of use</a></li>
+				<li><a href="/">privacy policy</a></li>
+				<li><a href="/">system status</a></li>
+			</ul>
+			<ul>
+				<li><a href="/">about ryanslist</a></li>
+				<li><a href="/">ryanslist is hiring in las vegas</a></li>
+				<li><a href="/">ryanslist open source</a></li>
+				<li><a href="/">ryanslist blog</a></li>
+				<li><a href="/">best-of-ryanslist</a></li>
+				<li><a href="/">ryanslist tv</a></li>
+				<li><a href="/">"ryanslist mike"</a></li>
+				<li><a href="/">ryan connects</a></li>
+			</ul>
+		</div>
+		<div class="maincontent">
+		{{#categories}}
+		<div class="catcontainer">
+			<a href="/category/summary/{{slug}}/{{id}}">{{title}} :</a>
+			<ul>
+				{{#subcategories}}<li><a href="/category/{{slug}}">{{title}}</a></li>{{/subcategories}}
+			</ul>
+		</div>
+		{{/categories}}
+		</div>
+		<div class="rightbar"><img src="/images/ryan.png"><h3>Ryan Lee</h3><p>The quintessential code school story…Ryan worked as a bartender on the strip before deciding he needed to make a career change. He attended our code school, was top of class and personal - so we hired him. Ryan’s positivity and energy is infectious and it shows in how students respond to his mentorship. He founded ryanslist and built the website. Slowly.</p></div>
+	</div>
 </body>
 </html>

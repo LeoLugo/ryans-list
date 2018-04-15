@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{titlemain}}</title>
+	<link rel="stylesheet" href="/stylesheets/sub.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="homelink"><a href="/"><img src="/images/home.svg" alt="home"/></a></div>
+		<div class="postlink"><a href="/post"><img src="/images/add.svg" alt="post link"></a></div>
+		<div class="header"><h1>Las Vegas</h1></div>
+		<div class="maincontent">
+			<div class="categorytitle"><h2>{{category}} :</h2></div>
+			<ul>
+			{{#list}}
+				<!-- <div><img src="{{listing_image}}" alt="listing image"></div> -->
+				<li><a href="/category/listing/{{category}}/{{id}}">{{title}}</a></li>
+			{{/list}}
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

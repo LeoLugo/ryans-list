@@ -1,0 +1,31 @@
+body {
+	box-sizing: border-box;
+	color: black;
+	margin: 0px;
+	background-color: #ECECEC;
+	font-family: Montserrat;
+}
+.maincontent {
+	width: 60%;
+	background-color: #90CCF4;
+	padding: 10px;
+	margin: auto;
+	margin-top: 100px;
+	height: 600px;
+}
+.homelink {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+.homelink img {
+	width: 50px;
+	height: 50px;
+}
+
+
+
+
+
+
+

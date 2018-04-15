@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{titlemain}}</title>
+	<link rel="stylesheet" href="/stylesheets/listing.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="homelink"><a href="/"><img src="/images/home.svg" alt="home"/></a></div>
+		<div class="postlink"><a href="/post"><img src="/images/add.svg" alt="post link"></a></div>
+		<div class="maincontent">
+			{{#info}}
+				<div class="listpic">
+					{{#listing_image}}<img class="listimage" src="{{listing_image}}" alt="listing image"/>{{/listing_image}}
+					{{^listing_image}}<img class="listimage" src="http://placehold.it/200/200"/>{{/listing_image}}
+				</div>
+				<div class="listingtitle"><h1>{{title}}</h1></div>
+				<div class="listingdescription">{{description}}</div>
+			{{/info}}
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Post</title>
+	<link rel="stylesheet" href="/stylesheets/post.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="homelink"><a href="/"><img src="/images/home.svg" alt="home"/></a></div>
+		<div class="maincontent">
+			<h1>Post your own listing</h1>
+			<form action="/addimage" method="POST" enctype="multipart/form-data">
+				<input type="text" name="title" placeholder="Title">
+				<input type="text" name="description" placeholder="Description">
+				Select an image to upload :
+				<input type="file" name="picture">
+				<select name="selectchoice">
+					<option value="activities">activities</option>
+				</select>
+				<input type="submit" value="Upload Image">
+			</form>
+		</div>
+	</div>
+</body>
+</html>
