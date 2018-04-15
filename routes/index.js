@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 	`
 
 	let data = {
-		title: 'Las Vegas'
+		titlemain: 'Las Vegas'
 	}
 	
 
@@ -38,8 +38,9 @@ router.get('/', function(req, res, next) {
 })
 
 //get specific category page
-router.get('/category/:category', function(req, res, next) {
+router.get('/category/:category/view/:viewtype', function(req, res, next) {
 	let cat = req.params.category
+	let vtype = req.params.viewtype
 
 	const sql = `
 	SELECT 
@@ -53,9 +54,10 @@ router.get('/category/:category', function(req, res, next) {
 		let data = {
 			category: cat,
 			titlemain: cat,
+			viewtype: vtype,
 			list : results.filter(listing => listing.category_name === cat)
 		}
-		// console.log(data.list)
+
 		res.render('sub', data)
 	})
 	
@@ -83,11 +85,10 @@ router.get ('/category/summary/:category/:id', function(req, res, next) {
 
 	conn.query(sql, (err, results, fields) => {
 		let data = {
-			title: catname,
+			titlemain: catname,
 			subcat : results
 		}
 
-		// console.log(data.subcat)
 		res.render('summary',data)
 	})
 })
@@ -106,7 +107,6 @@ router.get('/category/listing/:catname/:listid', function(req, res, next) {
 			titlemain: catname,
 			info : results
 		}
-		// console.log(data)
 		res.render('listing', data)
 	})
 })
@@ -124,7 +124,7 @@ router.get('/post',  function(req, res, next) {
 
 //post to db
 router.post('/addimage', upload.single('picture'), (req, res, next) => {
-	console.log(req.file.filename)
+	
 	const title = req.body.title
 	const description = req.body.description
 	const picture = '/images/' + req.file.filename
@@ -138,35 +138,9 @@ router.post('/addimage', upload.single('picture'), (req, res, next) => {
 
 
 		conn.query(sql, [title, category, description, picture], (err, results, fields) => {
-			res.redirect('/category/' + category)
+			res.redirect('/category/' + category + '/view/list')
 		})
 })
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;
+
+

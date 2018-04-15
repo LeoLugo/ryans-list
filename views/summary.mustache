@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{titlemain}}</title>
-	<link rel="stylesheet" href="/stylesheets/sub.css">
+	<link rel="stylesheet" href="/stylesheets/summary.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
@@ -12,10 +12,10 @@
 		<div class="postlink"><a href="/post"><img src="/images/add.svg" alt="post link"></a></div>
 		<div class="header"><h1>Las Vegas</h1></div>
 		<div class="maincontent">
-			<div class="categorytitle"><h2>{{title}} :</h2></div>
+			<div class="categorytitle"><h2>{{titlemain}} :</h2></div>
 			<ul>
 				{{#subcat}}
-					<li><a href="/category/{{slug}}">{{title}}</a></li>
+					<li><a href="/category/{{slug}}/view/list">{{title}}</a></li>
 				{{/subcat}}
 			</ul>
 		</div>

@@ -51,3 +51,31 @@ li {
 	top: 20px;
 	right: 20px;
 }
+.gallerylist {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.galleryholder {
+	width: 25%;
+}
+.galleryimage img {
+	width: 100px;
+	height: 100px;
+	display: block;
+	margin: auto;
+}
+.gallerytitle {
+	text-align: center;
+	margin-top: 10px;
+}
+.viewlink {
+	margin-left: 10px;
+}
+
+
+
+
+
+
+
