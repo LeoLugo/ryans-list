@@ -12,16 +12,17 @@
 		<div class="postlink"><a href="/post"><img src="/images/add.svg" alt="post link"></a></div>
 		<div class="header"><h1>Las Vegas</h1></div>
 		<div class="maincontent">
-			<div>Viewing Options : 
+			<div class="viewoptions">
+				Viewing Options : 
 				<a class="viewlink" href="/category/{{category}}/view/list/{{sort}}">List View</a>
 				<a class="viewlink" href="/category/{{category}}/view/thumb/{{sort}}">Thumb View</a>
 				<a class="viewlink" href="/category/{{category}}/view/gallery/{{sort}}">Gallery View</a>
 			</div>
-			<div>
+			<div class="sortoptions">
 				Sorting Options:
-				<a href="/category/{{category}}/view/{{viewtype}}">Newest</a>
-				<a href="/category/{{category}}/view/{{viewtype}}/high">Price : High to Low</a>
-				<a href="/category/{{category}}/view/{{viewtype}}/low">Price : Low to High</a>
+				<a class="viewlink" href="/category/{{category}}/view/{{viewtype}}">Newest</a>
+				 <a class="viewlink" href="/category/{{category}}/view/{{viewtype}}/high">Price - High to Low</a>
+				 <a class="viewlink" href="/category/{{category}}/view/{{viewtype}}/low">Price - Low to High</a>
 			</div>
 			<div class="categorytitle"><h2>{{category}} :</h2></div>
 			<ul class="{{viewtype}}list">

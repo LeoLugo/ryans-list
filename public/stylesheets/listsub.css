@@ -58,8 +58,36 @@ li {
 	margin-bottom: 5px;
 }
 .viewlink {
-	margin-left: 10px;
+	margin-left: 20px;
 }
+.viewoptions {
+	margin-bottom: 15px;
+}
+.viewoptions > a {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 3px 5px;
+}
+.sortoptions > a {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 3px 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
