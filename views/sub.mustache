@@ -13,9 +13,15 @@
 		<div class="header"><h1>Las Vegas</h1></div>
 		<div class="maincontent">
 			<div>Viewing Options : 
-				<a class="viewlink" href="/category/{{category}}/view/list">List View</a>
-				<a class="viewlink" href="/category/{{category}}/view/thumb">Thumb View</a>
-				<a class="viewlink" href="/category/{{category}}/view/gallery">Gallery View</a>
+				<a class="viewlink" href="/category/{{category}}/view/list/{{sort}}">List View</a>
+				<a class="viewlink" href="/category/{{category}}/view/thumb/{{sort}}">Thumb View</a>
+				<a class="viewlink" href="/category/{{category}}/view/gallery/{{sort}}">Gallery View</a>
+			</div>
+			<div>
+				Sorting Options:
+				<a href="/category/{{category}}/view/{{viewtype}}">Newest</a>
+				<a href="/category/{{category}}/view/{{viewtype}}/high">Price : High to Low</a>
+				<a href="/category/{{category}}/view/{{viewtype}}/low">Price : Low to High</a>
 			</div>
 			<div class="categorytitle"><h2>{{category}} :</h2></div>
 			<ul class="{{viewtype}}list">
@@ -25,7 +31,8 @@
 						{{#listing_image}}<img class="mainimages" src="{{listing_image}}" alt="listing image"/>{{/listing_image}}
 						{{^listing_image}}<img class="mainimages" src="http://placehold.it/200/200"/>{{/listing_image}}
 					</div>
-					<div class="{{viewtype}}title"><li><a href="/category/listing/{{category}}/{{id}}">{{title}}</a></li></div>
+					<div class="{{viewtype}}title"><li><a href="/category/listing/{{category}}/{{id}}">
+						{{#price}}${{price}}{{/price}}{{^price}}{{/price}} {{title}}</a></li></div>
 				</div>
 			{{/list}}
 			</ul>

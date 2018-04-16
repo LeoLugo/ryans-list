@@ -38,16 +38,26 @@ router.get('/', function(req, res, next) {
 })
 
 //get specific category page
-router.get('/category/:category/view/:viewtype', function(req, res, next) {
+router.get('/category/:category/view/:viewtype/:sort?', function(req, res, next) {
 	let cat = req.params.category
 	let vtype = req.params.viewtype
 
-	const sql = `
+	let sql = `
 	SELECT 
 		*
 	FROM 
 		listings
 	`
+	switch(req.params.sort) {
+		case "high":
+			sql += "ORDER BY price DESC";
+			break;
+		case "low":
+			sql += "ORDER BY price ASC";
+			break;
+			default:
+			sql += "ORDER BY date DESC"
+	}
 	
 
 	conn.query(sql, (err, results, fields) => {
@@ -55,6 +65,7 @@ router.get('/category/:category/view/:viewtype', function(req, res, next) {
 			category: cat,
 			titlemain: cat,
 			viewtype: vtype,
+			sort: req.params.sort,
 			list : results.filter(listing => listing.category_name === cat)
 		}
 
@@ -103,6 +114,7 @@ router.get('/category/listing/:catname/:listid', function(req, res, next) {
 	`
 
 	conn.query(sql, (err, results, fields) => {
+		console.log(results)
 		let data = {
 			titlemain: catname,
 			info : results
@@ -124,20 +136,23 @@ router.get('/post',  function(req, res, next) {
 
 //post to db
 router.post('/addimage', upload.single('picture'), (req, res, next) => {
-	
+	// console.log(req.body)
 	const title = req.body.title
 	const description = req.body.description
 	const picture = '/images/' + req.file.filename
 	const category = req.body.selectchoice
+	const price = req.body.price
+	const email = req.body.email
+	const zipcode = req.body.zipcode
 
 	const sql = `
 	INSERT INTO listings 
-		(title, category_name, description, listing_image)
+		(title, category_name, description, listing_image, price, email, zipcode)
 	VALUES 
-		(?, ?, ?, ?)`
+		(?, ?, ?, ?, ?, ?, ?)`
 
 
-		conn.query(sql, [title, category, description, picture], (err, results, fields) => {
+		conn.query(sql, [title, category, description, picture, price, email, zipcode], (err, results, fields) => {
 			res.redirect('/category/' + category + '/view/list')
 		})
 })

@@ -17,6 +17,7 @@
 					{{^listing_image}}<img class="listimage" src="http://placehold.it/200/200"/>{{/listing_image}}
 				</div>
 				<div class="listingtitle"><h1>{{title}}</h1></div>
+				<div class="pricediv">Price : {{#price}}${{price}}{{/price}}{{^price}}Unknown{{/price}}</div> <div class="contactdiv">Contact: {{#email}}{{email}}{{/email}}{{^email}}fakeemail@email.com{{/email}}</div>
 				<div class="listingdescription">{{description}}</div>
 			{{/info}}
 		</div>
