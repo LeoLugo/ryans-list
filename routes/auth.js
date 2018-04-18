@@ -11,7 +11,7 @@ router.get('/login', (req, res, next) => {
 	}
 
 	if(req.query.error) {
-		data.errormessage = "error in displaying the previous error"
+		data.errormessage = "Error In Displaying The Previous Error"
 	}
 
 	res.render('login', data)
