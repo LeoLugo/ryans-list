@@ -3,6 +3,7 @@ var router = express.Router();
 const conn = require('../lib/conn')
 var path = require('path')
 var multer = require('multer')
+const auth = require('../middlewares/authmid')
 
 const upload = multer({
 	dest: path.join(__dirname, '../public/images')
@@ -114,7 +115,7 @@ router.get('/category/listing/:catname/:listid', function(req, res, next) {
 	`
 
 	conn.query(sql, (err, results, fields) => {
-		console.log(results)
+		
 		let data = {
 			titlemain: catname,
 			info : results
@@ -130,13 +131,13 @@ router.get('/category/listing/:catname/:listid', function(req, res, next) {
 
 
 //get post page
-router.get('/post',  function(req, res, next) {
+router.get('/post', auth,   function(req, res, next) {
 	res.render('post')
 })
 
 //post to db
 router.post('/addimage', upload.single('picture'), (req, res, next) => {
-	// console.log(req.body)
+	
 	const title = req.body.title
 	const description = req.body.description
 	const picture = '/images/' + req.file.filename

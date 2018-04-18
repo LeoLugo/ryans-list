@@ -1,0 +1,33 @@
+html {
+	box-sizing: border-box;
+	color: black;
+	margin: 0px;
+	background-color: #ECECEC;
+	font-family: Montserrat;
+}
+form {
+	width: 250px;
+	margin: auto;
+}
+input {
+	width: 100%;
+	height: 20px;
+	margin-bottom: 5px;
+}
+.maincontent {
+	width: 60%;
+	background-color: #90CCF4;
+	padding: 10px;
+	margin: auto;
+	margin-top: 100px;
+	height: 600px;
+}
+.homelink {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+.homelink img {
+	width: 50px;
+	height: 50px;
+}
